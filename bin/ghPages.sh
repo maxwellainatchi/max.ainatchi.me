@@ -14,6 +14,8 @@ function ghActionsSetup {
   export REMOTE_REPO="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
   export SCRIPT_USER="${GITHUB_ACTOR}"
   export SCRIPT_EMAIL="${GITHUB_ACTOR}@users.noreply.github.com"
+
+  echo "[INFO] repo=$REMOTE_REPO"
 }
 
 function ghPages {
