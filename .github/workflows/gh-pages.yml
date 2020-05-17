@@ -1,0 +1,21 @@
+name: gh-pages
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  build:
+    # Job name is Greeting
+    name: Build
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        uses: "guahanweb/actions/node-app@master"
+        with:
+          args: "run build"
+      - name: Deploy Pages
+        needs: Build
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: "gh-pages"
