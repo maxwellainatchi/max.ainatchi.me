@@ -33,7 +33,8 @@ function ghPages {
   git add . && \
   echo -n 'Files to Commit:' && ls -l | wc -l && \
   git commit -m 'action build' > /dev/null 2>&1 && \
-  git push --force ${REMOTE_REPO} master:${REMOTE_BRANCH} > /dev/null 2>&1 && \
+  echo "[INFO] git cmd: git push --force ${REMOTE_REPO} master:${REMOTE_BRANCH}" && \
+  git push --force ${REMOTE_REPO} master:${REMOTE_BRANCH} > /dev/null && \
   rm -rf .git
 
   # navigate back to the previous directory
