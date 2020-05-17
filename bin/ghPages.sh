@@ -11,7 +11,7 @@ function ghActionsSetup {
     exit 1
   fi
 
-  export REMOTE_REPO="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+  export REMOTE_REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
   export SCRIPT_USER="${GITHUB_ACTOR}"
   export SCRIPT_EMAIL="${GITHUB_ACTOR}@users.noreply.github.com"
 
