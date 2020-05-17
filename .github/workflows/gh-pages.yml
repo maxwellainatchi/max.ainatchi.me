@@ -11,3 +11,5 @@ jobs:
       - run: npm run build
       - name: Deploy to Pages
         run: ./bin/ghPages.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
