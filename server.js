@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(Express.static("src"))
+app.use(Express.static("public"))
 app.use(renderer());
 
 let port = process.env.PORT || 3000;
