@@ -6,15 +6,16 @@
   "author": "Max Ainatchi <maxwell.ainatchi@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "build": "pug ./src"
-  },
-  "dependencies": {
-    "express": "^4.16.3",
-    "express-render": "maxwellainatchi/express-render",
-    "pug": "^2.0.3"
+    "start": "npm run build && cd build && http-server",
+    "start:dev": "node ./server.js",
+    "build": "npm run clean && node ./build.js",
+    "clean": "rm -rf ./build"
   },
   "devDependencies": {
-    "pug-cli": "^1.0.0-alpha6"
+    "express": "^4.16.3",
+    "express-render": "maxwellainatchi/express-render",
+    "fast-glob": "^3.2.2",
+    "pug": "^2.0.4",
+    "http-server": "^0.12.3"
   }
 }
